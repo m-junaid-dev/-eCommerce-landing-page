@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Shop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="logo">GiftShop</div>
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-box" placeholder="Search gifts">
+      <i class="fas fa-search search-icon" onclick="focusSearch()"></i>
+    </div>
+    <div class="nav-actions">
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li id="categories-item" onclick="toggleDropdown(this)">
+          <a href="#categories">Categories ▾</a>
+          <div class="dropdown">
+            <a href="#" onclick="filterProducts('all')">All Products</a>
+            <a href="#" onclick="filterProducts('jewellery')">💍 Jewellery</a>
+            <a href="#" onclick="filterProducts('wedding')">💒 Wedding Gifts</a>
+            <a href="#" onclick="filterProducts('birthday')">🎂 Birthday Gifts</a>
+            <a href="#" onclick="filterProducts('customized')">🎁 Customized Items</a>
+          </div>
+        </li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="cart" onclick="addToCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find the Perfect Gift for Every Occasion 🎁</h1>
+      <p>Birthday • Wedding • Jewellery • Customized Items</p>
+      <button class="cta-btn">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- 🟢 Sale text -->
+  <div class="sale-text">🔥 Big Sale – Flat 40% OFF!</div>
+
+  <!-- 🟢 Carousel -->
+  <div class="carousel">
+    <div class="carousel-track" id="carouselTrack">
+      <img src="./images/hero-section.jpg" alt="Gift 1">
+      <img src="./images/hero-section.jpg" alt="Gift 2">
+      <img src="./images/hero-section.jpg" alt="Gift 3">
+    </div>
+    <button class="carousel-btn left" onclick="moveSlide(-1)">❮</button>
+    <button class="carousel-btn right" onclick="moveSlide(1)">❯</button>
+  </div>
+
+  <!-- 🟢 Category Tabs -->
+  <div class="category-tabs">
+    <div class="category-tab active" onclick="filterProducts('all')">All Products</div>
+    <div class="category-tab" onclick="filterProducts('jewellery')">Jewellery</div>
+    <div class="category-tab" onclick="filterProducts('wedding')">Wedding Gifts</div>
+    <div class="category-tab" onclick="filterProducts('birthday')">Birthday Gifts</div>
+    <div class="category-tab" onclick="filterProducts('customized')">Customized Items</div>
+  </div>
+
+  <!-- 🟣 Products Section -->
+  <section id="products" class="products-section">
+    <h2 class="section-title">Our Best Gifts 🎁</h2>
+    <div class="products-grid" id="productsGrid">
+      <!-- Product Cards will be populated by JavaScript -->
+    </div>
+  </section>
+
+  <!-- 🟣 Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Product Image">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc">This is a beautiful gift item perfect for your loved ones!</p>
+      <button class="cta-btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- 🟢 Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About GiftShop</h3>
+        <p>Your one-stop destination for all gifting needs. We offer a wide range of products for every occasion, from birthdays to weddings and everything in between.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Gift Street, Mumbai, India</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> info@giftshop.com</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter to get updates on new products and special offers.</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 GiftShop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
