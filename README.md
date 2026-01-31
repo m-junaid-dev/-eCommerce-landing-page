@@ -25,6 +25,7 @@ Through this project, I improved my understanding of:
 - Creating real-world style landing pages
 
 ##  How to Run
+Download all file and put on one and same folder and also downlaod image and image will be put on another folder insie the main folder the another folder name is images should this name otherwise image will be not loaded
 Just open the `index.html` file in your browser.
 
 ---
